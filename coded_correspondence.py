@@ -55,3 +55,54 @@ for character in message_for_v:
         translated_message_for_v += character
 
 print(translated_message_for_v)
+
+
+
+
+#### Step 3: Make functions for decoding and coding 
+
+# Vishal sent over another reply, this time with two coded messages!
+    
+#     You're getting the hang of this! Okay here are two more messages, the first one is coded just like before with an offset of ten, and it contains a hint for decoding the second message!
+#     First message:
+#         jxu evviuj veh jxu iusedt cuiiqwu yi vekhjuud.
+
+#     Second message:
+#         bqdradyuzs ygxfubxq omqemd oubtqde fa oapq kagd yqeemsqe ue qhqz yadq eqogdq!
+    
+# Decode both of these messages. 
+# If you haven't already, define two functions `caesar_decode(message, offset)` and `caesar_encode(message, offset)` that can be used to quickly decode and encode messages given any offset.
+
+
+message_one = "jxu evviuj veh jxu iusedt cuiiqwu yi vekhjuud."
+mesasge_two = "bqdradyuzs ygxfubxq omqemd oubtqde fa oapq kagd yqeemsqe ue qhqz yadq eqogdq!"
+
+def decode(message, offset):
+    decoded_message = ""
+
+    for character in message:
+        if character in alphabet:
+            char_val = alphabet.find(character)
+            decoded_message += alphabet[(char_val + offset) % 26]
+        else:
+            decoded_message += character
+    return decoded_message
+
+print(decode(message_one,10))
+print(decode(mesasge_two,14))
+
+
+message = "Pretty cool to do mutliple ciphers to keep messages secure!"
+
+def encode(message, offset):
+    encoded_message = ""
+
+    for character in alphabet:
+            if character in message:
+                char_val = alphabet.find(character)
+                encoded_message += alphabet[(char_val - offset) % 26]
+            else:
+                encoded_message += character
+    return encoded_message
+
+print(encode(message, 20))
