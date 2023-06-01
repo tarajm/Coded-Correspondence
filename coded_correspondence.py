@@ -35,3 +35,23 @@ for character in message:
         translated_message += character
 
 print(translated_message)
+
+
+
+"""
+#### Step 2: Send Vishal a Coded Message
+Great job! Now send Vishal back a message using the same offset. Your message can be anything you want! Remember, encoding happens in opposite direction of decoding.
+"""
+
+message_for_v = "Hi, Vishal! Cool Cipher!  What happens next?"
+
+translated_message_for_v = ""
+
+for character in message_for_v:
+    if character in alphabet:
+        char_val = alphabet.find(character)
+        translated_message_for_v += alphabet[(char_val - 10 )% 26]
+    else:
+        translated_message_for_v += character
+
+print(translated_message_for_v)
