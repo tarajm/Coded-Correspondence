@@ -106,3 +106,26 @@ def encode(message, offset):
     return encoded_message
 
 print(encode(message, 20))
+
+
+#### Step 4: Solving a Caesar Cipher without knowing the shift value
+
+# Awesome work! While you were working to decode his last two messages, Vishal sent over another letter! He's really been bitten by the crypto-bug. Read it and see what interesting task he has lined up for you this time.
+
+#     Hello again friend! I knew you would love the Caesar Cipher, it's a cool, simple way to encrypt messages. Did you know that back in Caesar's time, it was considered a very secure way of communication and it took a lot of effort to crack if you were unaware of the value of the shift? That's all changed with computers! Now we can brute force these kinds of ciphers very quickly, as I'm sure you can imagine.  
+#     To test your cryptography skills, this next coded message is going to be harder than the last couple to crack. It's still going to be coded with a Caesar Cipher but this time I'm not going to tell you the value of the shift. You'll have to brute force it yourself.      
+#     Here's the coded message:
+            
+#         vhfinmxkl atox kxgwxkxw tee hy maxlx hew vbiaxkl hulhexmx. px'ee atox mh kxteer lmxi ni hnk ztfx by px ptgm mh dxxi hnk fxlltzxl ltyx.
+            
+#     Good luck!       
+# Decode Vishal's most recent message and see what it says!
+brute_force = "vhfinmxkl atox kxgwxkxw tee hy maxlx hew vbiaxkl tl hulhexmx. px'ee atox mh kxteer lmxi ni hnk ztfx by px ptgm mh dxxi hnk fxlltzxl ltyx."
+
+for i in range(1, 27):
+    print("Offset: {}".format(i))
+    print("\t {}".format(decode(brute_force, i)))
+
+
+
+
